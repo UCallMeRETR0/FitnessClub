@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.fitnessclub.controller.AntrenorController"
+      spacing="15">
+
+    <HBox styleClass="header" alignment="CENTER_LEFT" spacing="10">
+        <Label text="💪 Gestionare Antrenori" styleClass="header-title"/>
+    </HBox>
+
+    <VBox styleClass="card" spacing="10">
+        <Label text="Adaugă / Editează Antrenor" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+        <GridPane hgap="10" vgap="8">
+            <Label text="Nume:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="txtNume" promptText="Nume" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="180"/>
+
+            <Label text="Prenume:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+            <TextField fx:id="txtPrenume" promptText="Prenume" GridPane.columnIndex="3" GridPane.rowIndex="0" prefWidth="180"/>
+
+            <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="txtEmail" promptText="email@exemplu.com" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+            <Label text="Telefon:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+            <TextField fx:id="txtTelefon" promptText="07XXXXXXXX" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+
+            <Label text="Specialitate:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <ComboBox fx:id="cmbSpecialitate" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="180"/>
+
+            <Label text="Salariu (lei):" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+            <TextField fx:id="txtSalariu" promptText="ex: 5000" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+        </GridPane>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Button text="Adaugă" styleClass="btn-primary" onAction="#adaugaAntrenor"/>
+            <Button text="Actualizează" styleClass="btn-warning" onAction="#actualizeazaAntrenor"/>
+            <Button text="Șterge" styleClass="btn-danger" onAction="#stergeAntrenor"/>
+            <Button text="Golește" styleClass="btn-success" onAction="#golesteCampuri"/>
+        </HBox>
+        <Label fx:id="lblMesaj" styleClass="label-error"/>
+    </VBox>
+
+    <HBox styleClass="card" spacing="10" alignment="CENTER_LEFT">
+        <Label text="Filtrează după specialitate:"/>
+        <ComboBox fx:id="cmbFiltru" promptText="Toate" prefWidth="180"/>
+        <Button text="Filtrează" styleClass="btn-primary" onAction="#filtreazaDupaSpecialitate"/>
+        <Button text="Toți antrenorii" styleClass="btn-success" onAction="#incarcaAntrenori"/>
+    </HBox>
+
+    <VBox styleClass="card" VBox.vgrow="ALWAYS">
+        <TableView fx:id="tabelAntrenori" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colNume" text="Nume" prefWidth="120"/>
+                <TableColumn fx:id="colPrenume" text="Prenume" prefWidth="120"/>
+                <TableColumn fx:id="colEmail" text="Email" prefWidth="180"/>
+                <TableColumn fx:id="colTelefon" text="Telefon" prefWidth="120"/>
+                <TableColumn fx:id="colSpecialitate" text="Specialitate" prefWidth="120"/>
+                <TableColumn fx:id="colSalariu" text="Salariu" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+</VBox>

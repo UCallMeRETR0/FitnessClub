@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.fitnessclub.controller.AbonamentController"
+      spacing="15">
+
+    <HBox styleClass="header" alignment="CENTER_LEFT">
+        <Label text="📋 Gestionare Abonamente" styleClass="header-title"/>
+    </HBox>
+
+    <VBox styleClass="card" spacing="10">
+        <Label text="Adaugă Abonament" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+        <GridPane hgap="10" vgap="8">
+            <Label text="ID Client:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="txtClientId" promptText="ID client" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="180"/>
+
+            <Label text="Tip:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+            <ComboBox fx:id="cmbTip" GridPane.columnIndex="3" GridPane.rowIndex="0" prefWidth="180"/>
+
+            <Label text="Data start:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <DatePicker fx:id="dpDataStart" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+            <Label text="Preț (lei):" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+            <TextField fx:id="txtPret" promptText="ex: 150" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+        </GridPane>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Button text="Adaugă" styleClass="btn-primary" onAction="#adaugaAbonament"/>
+            <Button text="Șterge" styleClass="btn-danger" onAction="#stergeAbonament"/>
+            <Button text="Golește" styleClass="btn-success" onAction="#golesteCampuri"/>
+        </HBox>
+        <Label fx:id="lblMesaj" styleClass="label-error"/>
+    </VBox>
+
+    <HBox styleClass="card" spacing="10" alignment="CENTER_LEFT">
+        <Label text="Filtrează după status:"/>
+        <ComboBox fx:id="cmbFiltruStatus" promptText="Toate" prefWidth="150"/>
+        <Button text="Filtrează" styleClass="btn-primary" onAction="#filtreazaDupaStatus"/>
+        <Button text="Toate" styleClass="btn-success" onAction="#incarcaAbonamente"/>
+    </HBox>
+
+    <VBox styleClass="card" VBox.vgrow="ALWAYS">
+        <TableView fx:id="tabelAbonamente" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colClient" text="Client" prefWidth="160"/>
+                <TableColumn fx:id="colTip" text="Tip" prefWidth="120"/>
+                <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+                <TableColumn fx:id="colStart" text="Data Start" prefWidth="110"/>
+                <TableColumn fx:id="colExpirare" text="Expiră" prefWidth="110"/>
+                <TableColumn fx:id="colPret" text="Preț" prefWidth="90"/>
+                <TableColumn fx:id="colZile" text="Zile rămase" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+</VBox>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.fitnessclub.controller.RaportController"
+      spacing="15">
+
+    <HBox styleClass="header" alignment="CENTER_LEFT">
+        <Label text="📊 Rapoarte și Export" styleClass="header-title"/>
+    </HBox>
+
+    <HBox spacing="10" style="-fx-padding: 0 0 0 0;">
+
+        <!-- Raport Abonamente -->
+        <VBox styleClass="card" spacing="10" prefWidth="220">
+            <Label text="Abonamente Active" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblTotalAbonamente" text="Total: -"/>
+            <Button text="Generează" styleClass="btn-primary" onAction="#genereazaAbonamente" maxWidth="Infinity"/>
+            <Button text="Export TXT" styleClass="btn-warning" onAction="#exportAbonamenteTxt" maxWidth="Infinity"/>
+            <Button text="Export CSV" styleClass="btn-success" onAction="#exportAbonamenteCsv" maxWidth="Infinity"/>
+        </VBox>
+
+        <!-- Raport Venituri -->
+        <VBox styleClass="card" spacing="10" prefWidth="220">
+            <Label text="Venituri pe Tip" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblTotalVenituri" text="Total: -"/>
+            <Button text="Generează" styleClass="btn-primary" onAction="#genereazaVenituri" maxWidth="Infinity"/>
+            <Button text="Export TXT" styleClass="btn-warning" onAction="#exportVenituriTxt" maxWidth="Infinity"/>
+            <Button text="Export CSV" styleClass="btn-success" onAction="#exportVenituriCsv" maxWidth="Infinity"/>
+        </VBox>
+
+        <!-- Raport Antrenamente -->
+        <VBox styleClass="card" spacing="10" prefWidth="220">
+            <Label text="Antrenamente" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblTotalAntrenamente" text="Total: -"/>
+            <Button text="Generează" styleClass="btn-primary" onAction="#genereazaAntrenamente" maxWidth="Infinity"/>
+            <Button text="Export TXT" styleClass="btn-warning" onAction="#exportAntrenamenteTxt" maxWidth="Infinity"/>
+            <Button text="Export CSV" styleClass="btn-success" onAction="#exportAntrenamenteCsv" maxWidth="Infinity"/>
+        </VBox>
+
+    </HBox>
+
+    <!-- Tabel rezultate raport -->
+    <VBox styleClass="card" VBox.vgrow="ALWAYS">
+        <Label fx:id="lblRaportActiv" text="Selectează un raport pentru a vedea datele."
+               style="-fx-font-size: 13px; -fx-text-fill: #888;"/>
+        <TableView fx:id="tabelRaport" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colR1" text="Coloana 1" prefWidth="200"/>
+                <TableColumn fx:id="colR2" text="Coloana 2" prefWidth="200"/>
+                <TableColumn fx:id="colR3" text="Coloana 3" prefWidth="200"/>
+                <TableColumn fx:id="colR4" text="Coloana 4" prefWidth="200"/>
+            </columns>
+        </TableView>
+        <Label fx:id="lblMesajExport" styleClass="label-success"/>
+    </VBox>
+
+</VBox>

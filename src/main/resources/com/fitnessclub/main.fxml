@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.fitnessclub.controller.MainController"
+            stylesheets="@style.css">
+
+    <!-- Sidebar -->
+    <left>
+        <VBox styleClass="sidebar" spacing="2">
+            <Label text="🏋 Fitness Club" styleClass="sidebar-title"/>
+            <Separator style="-fx-background-color: #333;"/>
+            <Button fx:id="btnDashboard" text="🏠  Panou Informativ"
+                    styleClass="sidebar-btn" onAction="#showDashboard"/>
+            <Button fx:id="btnClienti" text="👤  Clienți"
+                    styleClass="sidebar-btn" onAction="#showClienti"/>
+            <Button fx:id="btnAntrenori" text="💪  Antrenori"
+                    styleClass="sidebar-btn" onAction="#showAntrenori"/>
+            <Button fx:id="btnAbonamente" text="📋  Abonamente"
+                    styleClass="sidebar-btn" onAction="#showAbonamente"/>
+            <Button fx:id="btnAntrenamente" text="🗓  Antrenamente"
+                    styleClass="sidebar-btn" onAction="#showAntrenamente"/>
+            <Button fx:id="btnCautare" text="🔍  Căutare Avansată"
+                    styleClass="sidebar-btn" onAction="#showCautare"/>
+            <Button fx:id="btnRapoarte" text="📊  Rapoarte"
+                    styleClass="sidebar-btn" onAction="#showRapoarte"/>
+            <Button fx:id="btnGrafice" text="📈  Grafice"
+                    styleClass="sidebar-btn" onAction="#showGrafice"/>
+        </VBox>
+    </left>
+
+    <!-- Continut principal -->
+    <center>
+        <StackPane fx:id="contentPane" style="-fx-padding: 20;"/>
+    </center>
+
+</BorderPane>

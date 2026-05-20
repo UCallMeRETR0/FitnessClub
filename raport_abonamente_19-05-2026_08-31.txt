@@ -1,0 +1,48 @@
+============================================================
+  RAPORT ABONAMENTE ACTIVE
+  Generat: 19.05.2026 08:31
+============================================================
+
+1     | LUNAR           | Bogdan Alexandrescu  | Expira: 2026-06-01 | 150.00 lei
+2     | ANUAL           | Corina Anghel        | Expira: 2027-01-01 | 900.00 lei
+3     | TRIMESTRIAL     | Horia Ardelean       | Expira: 2026-07-01 | 350.00 lei
+5     | ZI_UNICA        | Sergiu Balan         | Expira: 2026-05-15 | 30.00 lei
+6     | ANUAL           | Luminita Bira        | Expira: 2027-02-01 | 900.00 lei
+7     | TRIMESTRIAL     | Cristian Botan       | Expira: 2026-06-15 | 350.00 lei
+8     | LUNAR           | Adelina Bucur        | Expira: 2026-06-01 | 150.00 lei
+10    | LUNAR           | Sabina Calin         | Expira: 2026-05-15 | 150.00 lei
+11    | ZI_UNICA        | Ionel Carp           | Expira: 2026-05-15 | 30.00 lei
+12    | TRIMESTRIAL     | Petra Catana         | Expira: 2026-05-01 | 350.00 lei
+14    | ANUAL           | Daniela Chiru        | Expira: 2027-03-01 | 900.00 lei
+15    | LUNAR           | Marian Ciobanu       | Expira: 2026-06-01 | 150.00 lei
+16    | LUNAR           | Ramona Ciuca         | Expira: 2026-06-01 | 150.00 lei
+18    | ANUAL           | Alina Condur         | Expira: 2027-01-15 | 900.00 lei
+19    | ZI_UNICA        | Nelu Corbu           | Expira: 2026-05-15 | 30.00 lei
+20    | LUNAR           | Simona Covaci        | Expira: 2026-06-01 | 150.00 lei
+21    | ANUAL           | Laurentiu Craciun    | Expira: 2027-04-01 | 900.00 lei
+22    | TRIMESTRIAL     | Bianca Cristea       | Expira: 2026-08-01 | 350.00 lei
+24    | ANUAL           | Ioana Damian         | Expira: 2027-03-15 | 900.00 lei
+25    | ZI_UNICA        | Alexandru Danci      | Expira: 2026-05-15 | 30.00 lei
+26    | LUNAR           | Veronica Dascalu     | Expira: 2026-06-01 | 150.00 lei
+28    | ANUAL           | Mirela Deac          | Expira: 2027-02-15 | 900.00 lei
+29    | LUNAR           | Costel Deleanu       | Expira: 2026-05-01 | 150.00 lei
+31    | ANUAL           | Sorin Diaconescu     | Expira: 2027-01-20 | 900.00 lei
+32    | TRIMESTRIAL     | Catalina Dima        | Expira: 2026-07-15 | 350.00 lei
+33    | LUNAR           | Marius Dobrin        | Expira: 2026-06-01 | 150.00 lei
+35    | ZI_UNICA        | Tudor Dogaru         | Expira: 2026-05-15 | 30.00 lei
+36    | LUNAR           | Patricia Dolean      | Expira: 2026-06-01 | 150.00 lei
+37    | TRIMESTRIAL     | Liviu Dorobantu      | Expira: 2026-06-01 | 350.00 lei
+38    | ANUAL           | Oana Draghici        | Expira: 2027-04-01 | 900.00 lei
+40    | ZI_UNICA        | Teodora Dragan       | Expira: 2026-05-15 | 30.00 lei
+41    | ANUAL           | Nicu Dutu            | Expira: 2027-02-01 | 900.00 lei
+42    | TRIMESTRIAL     | Andreea Enescu       | Expira: 2026-08-01 | 350.00 lei
+44    | ANUAL           | Larisa Finta         | Expira: 2027-03-20 | 900.00 lei
+45    | ZI_UNICA        | Calin Fodor          | Expira: 2026-05-15 | 30.00 lei
+46    | LUNAR           | Mihaela Francu       | Expira: 2026-06-01 | 150.00 lei
+47    | TRIMESTRIAL     | Octavian Fulger      | Expira: 2026-07-01 | 350.00 lei
+48    | ANUAL           | Cristina Gabi        | Expira: 2027-01-10 | 900.00 lei
+49    | LUNAR           | Petrica Galea        | Expira: 2026-06-01 | 150.00 lei
+
+============================================================
+  Total inregistrari: 39
+============================================================

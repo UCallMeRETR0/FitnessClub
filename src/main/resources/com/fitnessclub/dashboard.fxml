@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.fitnessclub.controller.DashboardController"
+      spacing="15">
+
+    <HBox styleClass="header" alignment="CENTER_LEFT">
+        <Label text="🏠 Panou Informativ" styleClass="header-title"/>
+    </HBox>
+
+    <!-- Carduri statistici -->
+    <HBox spacing="15" style="-fx-padding: 0;">
+
+        <VBox styleClass="card" prefWidth="200" spacing="8" alignment="CENTER">
+            <Label text="👤 Clienți Activi" style="-fx-text-fill: #9e9e9e; -fx-font-size: 12px;"/>
+            <Label fx:id="lblClientiActivi"  text="—"
+                   style="-fx-text-fill: #4caf50; -fx-font-size: 36px; -fx-font-weight: bold;"/>
+            <Label text="cu abonament activ" style="-fx-text-fill: #757575; -fx-font-size: 11px;"/>
+        </VBox>
+
+        <VBox styleClass="card" prefWidth="200" spacing="8" alignment="CENTER">
+            <Label text="💰 Venituri Totale" style="-fx-text-fill: #9e9e9e; -fx-font-size: 12px;"/>
+            <Label fx:id="lblVenituri" text="—"
+                   style="-fx-text-fill: #66bb6a; -fx-font-size: 28px; -fx-font-weight: bold;"/>
+            <Label text="din toate abonamentele" style="-fx-text-fill: #757575; -fx-font-size: 11px;"/>
+        </VBox>
+
+        <VBox styleClass="card" prefWidth="200" spacing="8" alignment="CENTER">
+            <Label text="📋 Abonamente Active" style="-fx-text-fill: #9e9e9e; -fx-font-size: 12px;"/>
+            <Label fx:id="lblAbonamenteActive" text="—"
+                   style="-fx-text-fill: #4caf50; -fx-font-size: 36px; -fx-font-weight: bold;"/>
+            <Label text="din total abonamente" style="-fx-text-fill: #757575; -fx-font-size: 11px;"/>
+        </VBox>
+
+        <VBox styleClass="card" prefWidth="200" spacing="8" alignment="CENTER">
+            <Label text="⚠️Expiră în 7 zile" style="-fx-text-fill: #9e9e9e; -fx-font-size: 12px;"/>
+            <Label fx:id="lblExpiraCurand" text="—"
+                   style="-fx-text-fill: #ef9f27; -fx-font-size: 36px; -fx-font-weight: bold;"/>
+            <Label text="abonamente" style="-fx-text-fill: #757575; -fx-font-size: 11px;"/>
+        </VBox>
+
+        <VBox styleClass="card" prefWidth="200" spacing="8" alignment="CENTER">
+            <Label text="🗓 Antrenamente" style="-fx-text-fill: #9e9e9e; -fx-font-size: 12px;"/>
+            <Label fx:id="lblAntrenamente" text="—"
+                   style="-fx-text-fill: #4caf50; -fx-font-size: 36px; -fx-font-weight: bold;"/>
+            <Label text="total planificate" style="-fx-text-fill: #757575; -fx-font-size: 11px;"/>
+        </VBox>
+
+    </HBox>
+
+    <!-- Rand 2: top antrenament + abonamente recente -->
+    <HBox spacing="15">
+
+        <!-- Top antrenament -->
+        <VBox styleClass="card" prefWidth="350" spacing="10">
+            <Label text="🏆 Top Antrenament" style="-fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #4caf50;"/>
+            <Label fx:id="lblTopAntrenament" text="—"
+                   style="-fx-text-fill: #e0e0e0; -fx-font-size: 13px;"/>
+            <Label fx:id="lblTopParticipanti" text="—"
+                   style="-fx-text-fill: #9e9e9e; -fx-font-size: 12px;"/>
+        </VBox>
+
+        <!-- Abonamente expirate -->
+        <VBox styleClass="card" HBox.hgrow="ALWAYS" spacing="10">
+            <Label text="⚠️Abonamente care Expiră în 7 Zile"
+                   style="-fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #ef9f27;"/>
+            <TableView fx:id="tabelExpirare" prefHeight="180">
+                <columns>
+                    <TableColumn fx:id="colExpClient" text="Client" prefWidth="160"/>
+                    <TableColumn fx:id="colExpTip" text="Tip" prefWidth="100"/>
+                    <TableColumn fx:id="colExpData" text="Expiră" prefWidth="110"/>
+                    <TableColumn fx:id="colExpZile" text="Zile rămase" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+    </HBox>
+
+    <!-- Adauga in HBox-ul header-ului din dashboard.fxml -->
+    <HBox styleClass="header" alignment="CENTER_LEFT" spacing="10">
+        <Label text="🏠 Panou Informativ" styleClass="header-title" HBox.hgrow="ALWAYS"/>
+        <Button text="🔔 Verifică Notificări" styleClass="btn-warning"
+                onAction="#verificaNotificari"/>
+        <Button text="🔄 Reîmprospătează" styleClass="btn-primary"
+                onAction="#reimprospateaza"/>
+    </HBox>
+
+    <!-- Rand 3: statistici venituri pe tip -->
+    <VBox styleClass="card" spacing="10">
+        <Label text="💰 Venituri pe Tip de Abonament"
+               style="-fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #4caf50;"/>
+        <TableView fx:id="tabelVenituri" prefHeight="160">
+            <columns>
+                <TableColumn fx:id="colTip" text="Tip Abonament" prefWidth="200"/>
+                <TableColumn fx:id="colNr" text="Nr. Abonamente" prefWidth="150"/>
+                <TableColumn fx:id="colSuma" text="Venituri (lei)" prefWidth="150"/>
+                <TableColumn fx:id="colProcent" text="Pondere" prefWidth="150"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+    <Label fx:id="lblMesaj" styleClass="label-success" style="-fx-padding: 0 0 0 5;"/>
+
+</VBox>

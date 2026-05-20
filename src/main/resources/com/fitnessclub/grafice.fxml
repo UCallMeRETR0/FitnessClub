@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.fitnessclub.controller.GraficeController"
+      stylesheets="@style.css, @grafice.css"
+      spacing="15">
+
+    <HBox styleClass="header" alignment="CENTER_LEFT" spacing="10">
+        <Label text="📈 Grafice și Statistici" styleClass="header-title"
+               HBox.hgrow="ALWAYS"/>
+        <Button text="🔄 Reîmprospătează" styleClass="btn-primary"
+                onAction="#reimprospateaza"/>
+    </HBox>
+
+    <!-- Rand 1: PieChart + BarChart venituri -->
+    <HBox spacing="15" VBox.vgrow="ALWAYS">
+
+        <!-- PieChart venituri pe tip -->
+        <VBox styleClass="card" prefWidth="420" VBox.vgrow="ALWAYS" spacing="8">
+            <Label text="💰 Venituri pe Tip Abonament"
+                   style="-fx-font-weight: bold; -fx-font-size: 14px;
+                          -fx-text-fill: #4caf50;"/>
+            <PieChart fx:id="pieVenituri" VBox.vgrow="ALWAYS"
+                      style="-fx-background-color: transparent;"/>
+        </VBox>
+
+        <!-- BarChart abonamente pe tip -->
+        <VBox styleClass="card" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" spacing="8">
+            <Label text="📋 Număr Abonamente pe Tip"
+                   style="-fx-font-weight: bold; -fx-font-size: 14px;
+                          -fx-text-fill: #4caf50;"/>
+            <BarChart fx:id="barAbonamente" VBox.vgrow="ALWAYS"
+                      style="-fx-background-color: transparent;"
+                      animated="true">
+                <xAxis>
+                    <CategoryAxis label="Tip Abonament"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="Număr"/>
+                </yAxis>
+            </BarChart>
+        </VBox>
+
+    </HBox>
+
+    <!-- Rand 2: BarChart capacitate antrenamente -->
+    <VBox styleClass="card" prefHeight="250" spacing="8">
+        <Label text="🗓 Capacitate vs Participanți per Antrenament"
+               style="-fx-font-weight: bold; -fx-font-size: 14px;
+                      -fx-text-fill: #4caf50;"/>
+        <BarChart fx:id="barAntrenamente" VBox.vgrow="ALWAYS"
+                  style="-fx-background-color: transparent;"
+                  animated="true">
+            <xAxis>
+                <CategoryAxis label="Antrenament"/>
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Persoane"/>
+            </yAxis>
+        </BarChart>
+    </VBox>
+
+</VBox>

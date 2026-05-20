@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.fitnessclub.controller.ClientController"
+      spacing="15">
+
+    <!-- Header -->
+    <HBox styleClass="header" alignment="CENTER_LEFT" spacing="10">
+        <Label text="👤 Gestionare Clienți" styleClass="header-title"/>
+    </HBox>
+
+    <!-- Formular -->
+    <VBox styleClass="card" spacing="10">
+        <Label text="Adaugă / Editează Client" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+        <GridPane hgap="10" vgap="8">
+            <Label text="Nume:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="txtNume" promptText="Nume" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="180"/>
+
+            <Label text="Prenume:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+            <TextField fx:id="txtPrenume" promptText="Prenume" GridPane.columnIndex="3" GridPane.rowIndex="0" prefWidth="180"/>
+
+            <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="txtEmail" promptText="email@exemplu.com" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+            <Label text="Telefon:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+            <TextField fx:id="txtTelefon" promptText="07XXXXXXXX" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+
+            <Label text="Data nașterii:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <DatePicker fx:id="dpDataNasterii" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        </GridPane>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Button text="Adaugă" styleClass="btn-primary" onAction="#adaugaClient"/>
+            <Button text="Actualizează" styleClass="btn-warning" onAction="#actualizeazaClient"/>
+            <Button text="Șterge" styleClass="btn-danger" onAction="#stergeClient"/>
+            <Button text="Golește" styleClass="btn-success" onAction="#golesteCampuri"/>
+        </HBox>
+        <Label fx:id="lblMesaj" styleClass="label-error"/>
+    </VBox>
+
+    <!-- Cautare -->
+    <HBox styleClass="card" spacing="10" alignment="CENTER_LEFT">
+        <Label text="Caută:"/>
+        <TextField fx:id="txtCautare" promptText="Caută după nume..." prefWidth="250"
+                   onKeyReleased="#cautaClient"/>
+        <Button text="Toți clienții" styleClass="btn-primary" onAction="#incarcaClienti"/>
+    </HBox>
+
+    <!-- Tabel -->
+    <VBox styleClass="card" VBox.vgrow="ALWAYS">
+        <TableView fx:id="tabelClienti" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colNume" text="Nume" prefWidth="120"/>
+                <TableColumn fx:id="colPrenume" text="Prenume" prefWidth="120"/>
+                <TableColumn fx:id="colEmail" text="Email" prefWidth="200"/>
+                <TableColumn fx:id="colTelefon" text="Telefon" prefWidth="120"/>
+                <TableColumn fx:id="colDataNasterii" text="Data Nașterii" prefWidth="120"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+</VBox>

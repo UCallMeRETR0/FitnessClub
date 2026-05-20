@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.fitnessclub.controller.CautareController"
+      spacing="15">
+
+    <HBox styleClass="header" alignment="CENTER_LEFT">
+        <Label text="🔍 Căutare Avansată" styleClass="header-title"/>
+    </HBox>
+
+    <!-- Filtru Clienti -->
+    <VBox styleClass="card" spacing="10">
+        <Label text="👤 Căutare Clienți"
+               style="-fx-font-weight: bold; -fx-font-size: 14px;
+                      -fx-text-fill: #4caf50;"/>
+        <GridPane hgap="10" vgap="8">
+            <Label text="Nume / Prenume:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="txtNumeClient" promptText="ex: Ion, Maria..."
+                       GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="180"/>
+
+            <Label text="Email:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+            <TextField fx:id="txtEmailClient" promptText="ex: @gmail.com"
+                       GridPane.columnIndex="3" GridPane.rowIndex="0" prefWidth="180"/>
+
+            <Label text="Are abonament activ:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <ComboBox fx:id="cmbAbonamentActiv" promptText="Toate"
+                      GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="180"/>
+
+            <Label text="Născut după:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+            <DatePicker fx:id="dpNascutDupa"
+                        GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+        </GridPane>
+        <HBox spacing="10">
+            <Button text="🔍 Caută Clienți" styleClass="btn-primary"
+                    onAction="#cautaClienti"/>
+            <Button text="🔄 Resetează" styleClass="btn-success"
+                    onAction="#resetaClienti"/>
+            <Label fx:id="lblRezultateClienti" styleClass="label-success"/>
+        </HBox>
+        <TableView fx:id="tabelClienti" prefHeight="180">
+            <columns>
+                <TableColumn fx:id="colCId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colCNume" text="Nume" prefWidth="120"/>
+                <TableColumn fx:id="colCPrenume" text="Prenume" prefWidth="120"/>
+                <TableColumn fx:id="colCEmail" text="Email" prefWidth="200"/>
+                <TableColumn fx:id="colCTelefon" text="Telefon" prefWidth="120"/>
+                <TableColumn fx:id="colCActiv" text="Abonament" prefWidth="120"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+    <!-- Filtru Abonamente -->
+    <VBox styleClass="card" spacing="10">
+        <Label text="📋 Căutare Abonamente"
+               style="-fx-font-weight: bold; -fx-font-size: 14px;
+                      -fx-text-fill: #4caf50;"/>
+        <GridPane hgap="10" vgap="8">
+            <Label text="Tip:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <ComboBox fx:id="cmbTipAb" promptText="Toate tipurile"
+                      GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="180"/>
+
+            <Label text="Status:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+            <ComboBox fx:id="cmbStatusAb" promptText="Toate statusurile"
+                      GridPane.columnIndex="3" GridPane.rowIndex="0" prefWidth="180"/>
+
+            <Label text="Preț minim (lei):" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="txtPretMin" promptText="ex: 100"
+                       GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="180"/>
+
+            <Label text="Preț maxim (lei):" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+            <TextField fx:id="txtPretMax" promptText="ex: 1000"
+                       GridPane.columnIndex="3" GridPane.rowIndex="1" prefWidth="180"/>
+
+            <Label text="Expiră după:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <DatePicker fx:id="dpExpiraDupa"
+                        GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+            <Label text="Expiră înainte de:" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+            <DatePicker fx:id="dpExpinaInainte"
+                        GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+        </GridPane>
+        <HBox spacing="10">
+            <Button text="🔍 Caută Abonamente" styleClass="btn-primary"
+                    onAction="#cautaAbonamente"/>
+            <Button text="🔄 Resetează" styleClass="btn-success"
+                    onAction="#resetaAbonamente"/>
+            <Label fx:id="lblRezultateAbonamente" styleClass="label-success"/>
+        </HBox>
+        <TableView fx:id="tabelAbonamente" prefHeight="180">
+            <columns>
+                <TableColumn fx:id="colAId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colAClient" text="Client" prefWidth="160"/>
+                <TableColumn fx:id="colATip" text="Tip" prefWidth="110"/>
+                <TableColumn fx:id="colAStatus" text="Status" prefWidth="100"/>
+                <TableColumn fx:id="colAExpirare" text="Expiră" prefWidth="110"/>
+                <TableColumn fx:id="colAPret" text="Preț" prefWidth="90"/>
+                <TableColumn fx:id="colAZile" text="Zile rămase" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+</VBox>
